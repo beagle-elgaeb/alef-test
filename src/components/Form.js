@@ -1,42 +1,45 @@
-import produce from "immer";
-import { Fragment, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
 import PlusImg from "../images/plus.svg";
+import { addChild, input } from "../redux/personSlice";
+import { save } from "../redux/savedSlice";
+import FormChildren from "./FormCildren";
 
 function Form() {
-  const [children, setChildren] = useState([]);
+  const dispatch = useDispatch();
+  const person = useSelector((state) => state.person);
 
-  function addChild() {
-    if (children.length < 5) {
-      setChildren([...children, "child"]);
-    }
-  }
-
-  function deleteChild(index) {
-    setChildren((children) => {
-      const newState = produce(children, (children) => {
-        children.splice(index, 1);
-      });
-
-      return newState;
-    });
-  }
+  const handleChange = (e) => {
+    dispatch(input({ field: e.target.name, value: e.target.value }));
+  };
 
   return (
     <FormContainer>
       <Title>Персональные данные</Title>
       <FormItem>
-        <Input />
+        <Input
+          aria-label="Имя"
+          type="text"
+          name="name"
+          value={person.name}
+          onChange={handleChange}
+        />
         <Label>Имя</Label>
       </FormItem>
       <FormItem>
-        <Input />
+        <Input
+          aria-label="Возраст"
+          type="number"
+          name="age"
+          value={person.age}
+          onChange={handleChange}
+        />
         <Label>Возраст</Label>
       </FormItem>
       <ChildrenTitle>
         <TitleChild>Дети (макс. 5)</TitleChild>
-        {children.length < 5 ? (
-          <ButtonAdd type="button" onClick={addChild}>
+        {person.children.length < 5 ? (
+          <ButtonAdd type="button" onClick={() => dispatch(addChild())}>
             <ButtonAddImg src={PlusImg} alt="Плюс" />
             Добавить ребенка
           </ButtonAdd>
@@ -45,28 +48,13 @@ function Form() {
         )}
       </ChildrenTitle>
       <Children>
-        {children.map((child, i) => (
-          <Fragment key={i}>
-            <FormItemChild>
-              <Input />
-              <Label>Имя</Label>
-            </FormItemChild>
-            <FormItemChild>
-              <Input />
-              <Label>Возраст</Label>
-            </FormItemChild>
-            <ButtonDel
-              type="button"
-              onClick={(i) => {
-                deleteChild(i);
-              }}
-            >
-              Удалить
-            </ButtonDel>
-          </Fragment>
+        {person.children.map((child, i) => (
+          <FormChildren key={i} index={i} />
         ))}
       </Children>
-      <ButtonSave>Сохранить</ButtonSave>
+      <ButtonSave type="button" onClick={() => dispatch(save(person))}>
+        Сохранить
+      </ButtonSave>
     </FormContainer>
   );
 }
@@ -105,6 +93,11 @@ const Input = styled.input`
   cursor: pointer;
   margin: 0;
   padding: 26px 0 6px 16px;
+
+  ::-webkit-outer-spin-button,
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
 `;
 
 const Label = styled.label`
@@ -169,15 +162,6 @@ const Children = styled.div`
   grid-column-gap: 18px;
   margin: 0 0 30px 0;
   padding: 0;
-`;
-
-const FormItemChild = styled(FormItem)`
-  margin: 0 0 0 0;
-`;
-
-const ButtonDel = styled(Button)`
-  text-align: end;
-  color: #01a7fd;
 `;
 
 const ButtonSave = styled(Button)`

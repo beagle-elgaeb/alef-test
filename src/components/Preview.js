@@ -1,17 +1,31 @@
+import { Fragment } from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components/macro";
 
 function Preview() {
+  const saved = useSelector((state) => state.saved);
+
   return (
     <PreviewContainer>
       <Title>Персональные данные</Title>
-      <Data>Василий, 30 лет</Data>
+
+      {saved && (
+        <Data>
+          {saved.name}, {saved.age} лет
+        </Data>
+      )}
+
       <Title>Дети</Title>
-      <Child>
-        <DataChild>Василий, 14 лет</DataChild>
-      </Child>
-      <Child>
-        <DataChild>Дормидонт, 14 лет</DataChild>
-      </Child>
+
+      {saved?.children.map((child, i) => (
+        <Fragment key={i}>
+          <Child>
+            <DataChild>
+              {saved.children[i].name}, {saved.children[i].age} лет
+            </DataChild>
+          </Child>
+        </Fragment>
+      ))}
     </PreviewContainer>
   );
 }

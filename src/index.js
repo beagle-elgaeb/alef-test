@@ -7,7 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import "roboto-fontface";
 import App from "./components/App";
 import "./index.css";
-import store from "./redux/redux";
+import store from "./redux/store";
 import reportWebVitals from "./reportWebVitals";
 
 ReactDOM.render(
