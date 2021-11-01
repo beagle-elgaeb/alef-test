@@ -1,11 +1,21 @@
 # Тестовое задание от Alef Development
 
+[Вакансия](https://hh.ru/vacancy/49040389 "React-программист")  
+
+<!-- _[Ссылка на приложение](Ссылка "Приложение")_ -->
+
 <p>
   <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript"><img src="readme/icon-js.svg" alt="JS"></a>
     <img src="readme/icon-whitespace-5px.svg"/>
   <a href="https://ru.reactjs.org/"><img src="readme/icon-react.svg" alt="React"></a>
     <img src="readme/icon-whitespace-5px.svg"/>
+  <a href="https://redux.js.org/"><img src="readme/icon-redux.svg" alt="Redux"></a>
+    <img src="readme/icon-whitespace-5px.svg"/>
+  <a href="https://yarnpkg.com/"><img src="readme/icon-yarn.svg" alt="Yarn"></a>
+    <img src="readme/icon-whitespace-5px.svg"/>
   <a href="https://webpack.js.org/"><img src="readme/icon-webpack.svg" alt="WebPack"></a>
+    <img src="readme/icon-whitespace-5px.svg"/>
+  <a href="https://styled-components.com/"><img src="readme/icon-styled-components.svg" alt="Styled-components"></a>
 </p>
 
 ## Задание
@@ -16,20 +26,37 @@
 Реализовать функционал нужно без серверной части. При нажатии на кнопку `Сохранить` введенные данные должны отображаться на странице `Превью`.  
 Есть вторая страница, на которой отображаются введенные данные, без возможности редактировать.
 
-_[Макет в фигме](https://www.figma.com/file/34RHaNzxPnoTPCtpIrqMYU/React-Alef?node-id=2286%3A7698)_
+_[Макет](https://www.figma.com/file/34RHaNzxPnoTPCtpIrqMYU/React-Alef?node-id=2286%3A7698 "Ссылка на Фигму")_
 
-Конкретного срока выполнения задания нет, но чем быстрее оно выполнено, тем больше шанс получить работу при прочих равных показателях с другими соискателями.
+### Задачи проекта
+
+Демонстрация компетенций в соответствии с тестовым заданием.
 
 ## Функциональность получившегося приложения
 
-В соответствии с заданием
+В соответствии с заданием.  
+Также:
+
+- проработан UX;
+- используется css-in-js библиотека [styled-components](https://styled-components.com/ "Документация").
+<!-- - [страница размещена на GitHub Pages](ссылка "Выполненое тестовое задание"). -->
 
 ## Возможные улучшения
 
-- Переписать на TS
-- Задеплоить на GH Pages
+- уточнить, можно ли следать UX лучше;
+- переписать на TS;
+- задеплоить на GH Pages.
+
+## Директории
+
+- `/src` — рабочая папка проекта;
+- `/readme` — папка с иконками стека;
+- остальные директории вспомогательные, создаются при необходимости разработчиком.
 
 ## Как использовать
+
+Установка сопутствующих библиотек:  
+`yarn`
 
 Запуск приложения:  
 `yarn start`
