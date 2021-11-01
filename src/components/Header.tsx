@@ -1,4 +1,4 @@
-import styled from "styled-components/macro";
+import styled from "@emotion/styled";
 import LogoImg from "../images/logo.svg";
 import { Link } from "react-router-dom";
 
@@ -44,4 +44,8 @@ const NavItem = styled(Link)`
   color: #8d8d8d;
   cursor: pointer;
   margin: 0 24px 0 0;
+
+  :hover {
+    font-weight: 600;
+  }
 `;

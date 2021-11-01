@@ -1,23 +1,27 @@
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
-import styled from "styled-components/macro";
+import styled from "@emotion/styled";
+import { ReduxType } from "../redux/types"
 
 function Preview() {
-  const saved = useSelector((state) => state.saved);
+  const saved = useSelector((state: ReduxType) => state.saved);
 
   return (
     <PreviewContainer>
       <Title>Персональные данные</Title>
 
-      {saved && (
-        <Data>
-          {saved.name}, {saved.age} лет
-        </Data>
-      )}
+      {saved &&
+        (saved.name === "" && saved.age === "" ? (
+          <Data></Data>
+        ) : (
+          <Data>
+            {saved.name}, {saved.age} лет
+          </Data>
+        ))}
 
       <Title>Дети</Title>
 
-      {saved?.children.map((child, i) => (
+      {saved?.children.map((_, i) => (
         <Fragment key={i}>
           <Child>
             <DataChild>

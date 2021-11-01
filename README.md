@@ -1,7 +1,7 @@
 # Тестовое задание от Alef Development
 
 [Вакансия](https://hh.ru/vacancy/49040389 "React-программист")  
-_[Ссылка на приложение](https://beagle-elgaeb.github.io/test-alef/ "Приложение")_  
+_[Ссылка на приложение](https://beagle-elgaeb.github.io/test-alef/ "Приложение")_
 
 <p>
   <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript"><img src="readme/icon-js.svg" alt="JS"></a>
@@ -14,7 +14,7 @@ _[Ссылка на приложение](https://beagle-elgaeb.github.io/test-a
     <img src="readme/icon-whitespace-5px.svg"/>
   <a href="https://webpack.js.org/"><img src="readme/icon-webpack.svg" alt="WebPack"></a>
     <img src="readme/icon-whitespace-5px.svg"/>
-  <a href="https://styled-components.com/"><img src="readme/icon-styled-components.svg" alt="Styled-components"></a>
+  <!-- <a href="https://styled-components.com/"><img src="readme/icon-styled-components.svg" alt="Styled-components"></a> -->
 </p>
 
 ## Задание
@@ -36,15 +36,14 @@ _[Макет](https://www.figma.com/file/34RHaNzxPnoTPCtpIrqMYU/React-Alef?node-
 В соответствии с заданием.  
 Также:
 
-- проработан UX;
-- используется css-in-js библиотека [styled-components](https://styled-components.com/ "Документация").
-- [страница размещена на GitHub Pages](https://beagle-elgaeb.github.io/test-alef/ "Выполненое тестовое задание").  
+- при сохранении формы происходит автоматический переход на страницу `Превью`, очищаются поля формы;
+- проработан UX (кнопки меняют состояние при наведении, кнопка сохранить недоступна, если введёные данные невалидны);
+- используется css-in-js библиотека [emotion](https://emotion.sh/docs/introduction "Документация");
+- [страница размещена на GitHub Pages](https://beagle-elgaeb.github.io/test-alef/ "Выполненое тестовое задание").
 
 ## Возможные улучшения
 
-- уточнить, можно ли следать UX лучше;
-- переписать на TS;
-- задеплоить на GH Pages.
+- не предполагаются.
 
 ## Директории
 
@@ -57,8 +56,14 @@ _[Макет](https://www.figma.com/file/34RHaNzxPnoTPCtpIrqMYU/React-Alef?node-
 Установка сопутствующих библиотек:  
 `yarn`
 
-Запуск приложения:  
+Сборка приложения:  
+`yarn build`
+
+Локальный запуск приложения:  
 `yarn start`
+
+Деплой приложения на GH Pages:  
+`yarn deploy`
 
 ---
 

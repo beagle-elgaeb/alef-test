@@ -1,17 +1,55 @@
+import styled from "@emotion/styled";
 import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components/macro";
+import { useHistory } from "react-router";
+import { ChangeEvent } from "react-router/node_modules/@types/react";
 import PlusImg from "../images/plus.svg";
-import { addChild, input } from "../redux/personSlice";
+import { addChild, deleteChild, input } from "../redux/personSlice";
 import { save } from "../redux/savedSlice";
+import { ReduxType } from "../redux/types";
 import FormChildren from "./FormCildren";
+import { validateFormChild, validateFormPerson } from "./utils";
 
 function Form() {
+  const history = useHistory();
   const dispatch = useDispatch();
-  const person = useSelector((state) => state.person);
+  const person = useSelector((state: ReduxType) => state.person);
+  const children = useSelector((state: ReduxType) => state.person.children);
 
-  const handleChange = (e) => {
-    dispatch(input({ field: e.target.name, value: e.target.value }));
+  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    dispatch(
+      input({
+        field: evt.currentTarget.name as "name" | "age",
+        value: evt.currentTarget.value,
+      })
+    );
   };
+
+  const checkValidationPerson = validateFormPerson(person.name, person.age);
+  const checkValidationChildren = children.every((child) =>
+    validateFormChild(child.name, child.age)
+  );
+
+  const checkValidation = checkValidationPerson && checkValidationChildren;
+
+  function saveData() {
+    dispatch(save(person));
+    history.push("/preview");
+    dispatch(
+      input({
+        field: "name",
+        value: "",
+      })
+    );
+    dispatch(
+      input({
+        field: "age",
+        value: "",
+      })
+    );
+    children.forEach((_, i) => {
+      dispatch(deleteChild(i));
+    });
+  }
 
   return (
     <FormContainer>
@@ -23,6 +61,9 @@ function Form() {
           name="name"
           value={person.name}
           onChange={handleChange}
+          autoComplete="off"
+          maxLength={100}
+          required
         />
         <Label>Имя</Label>
       </FormItem>
@@ -33,6 +74,9 @@ function Form() {
           name="age"
           value={person.age}
           onChange={handleChange}
+          autoComplete="off"
+          maxLength={3}
+          required
         />
         <Label>Возраст</Label>
       </FormItem>
@@ -48,11 +92,11 @@ function Form() {
         )}
       </ChildrenTitle>
       <Children>
-        {person.children.map((child, i) => (
+        {person.children.map((_, i) => (
           <FormChildren key={i} index={i} />
         ))}
       </Children>
-      <ButtonSave type="button" onClick={() => dispatch(save(person))}>
+      <ButtonSave type="button" onClick={saveData} disabled={!checkValidation}>
         Сохранить
       </ButtonSave>
     </FormContainer>
@@ -83,6 +127,7 @@ const Input = styled.input`
   height: 56px;
   box-sizing: border-box;
   display: block;
+  background: transparent;
   border: 1px solid #f1f1f1;
   border-radius: 4px;
   outline: none;
@@ -90,13 +135,17 @@ const Input = styled.input`
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
-  cursor: pointer;
   margin: 0;
   padding: 26px 0 6px 16px;
 
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
+  }
+
+  :focus {
+    border-top: 1px solid #01a7fd50;
+    border-bottom: 1px solid #01a7fd50;
   }
 `;
 
@@ -146,6 +195,10 @@ const ButtonAdd = styled(Button)`
   border: 2px solid #01a7fd;
   border-radius: 99em;
   color: #01a7fd;
+
+  :hover {
+    box-shadow: 0 0 5px 1px inset #01a7fd60;
+  }
 `;
 
 const ButtonAddImg = styled.img`
@@ -164,10 +217,15 @@ const Children = styled.div`
   padding: 0;
 `;
 
-const ButtonSave = styled(Button)`
+const ButtonSave = styled(Button)<{ disabled: boolean }>`
   width: 118px;
   height: 44px;
-  background: #01a7fd;
+  background: ${({ disabled }) => (disabled ? "#8d8d8d40" : "#01a7fd")};
   border-radius: 99em;
   color: #ffffff;
+
+  :hover {
+    box-shadow: ${({ disabled }) =>
+      disabled ? "none" : "0 0 5px 2px #01a7fd80"};
+  }
 `;

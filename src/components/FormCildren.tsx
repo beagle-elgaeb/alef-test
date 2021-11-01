@@ -1,17 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components/macro";
+import { ChangeEvent } from "react-router/node_modules/@types/react";
+import styled from "@emotion/styled";
 import { deleteChild, inputChild } from "../redux/personSlice";
+import { ReduxType } from "../redux/types";
 
-function FormChildren({ index }) {
+function FormChildren({ index }: { index: number }) {
   const dispatch = useDispatch();
-  const child = useSelector((state) => state.person.children[index]);
+  const child = useSelector((state: ReduxType) => state.person.children[index]);
 
-  const handleChildChange = (e) => {
+  const handleChildChange = (evt: ChangeEvent<HTMLInputElement>) => {
     dispatch(
       inputChild({
         index: index,
-        field: e.target.name,
-        value: e.target.value,
+        field: evt.currentTarget.name as "name" | "age",
+        value: evt.currentTarget.value,
       })
     );
   };
@@ -25,6 +27,9 @@ function FormChildren({ index }) {
           name="name"
           value={child.name}
           onChange={handleChildChange}
+          autoComplete="off"
+          maxLength={100}
+          required
         />
         <Label>Имя</Label>
       </FormItemChild>
@@ -35,6 +40,9 @@ function FormChildren({ index }) {
           name="age"
           value={child.age}
           onChange={handleChildChange}
+          autoComplete="off"
+          maxLength={100}
+          required
         />
         <Label>Возраст</Label>
       </FormItemChild>
@@ -52,6 +60,7 @@ const Input = styled.input`
   height: 56px;
   box-sizing: border-box;
   display: block;
+  background: transparent;
   border: 1px solid #f1f1f1;
   border-radius: 4px;
   outline: none;
@@ -59,13 +68,17 @@ const Input = styled.input`
   font-size: 14px;
   line-height: 24px;
   font-weight: 400;
-  cursor: pointer;
   margin: 0;
   padding: 26px 0 6px 16px;
 
   ::-webkit-outer-spin-button,
   ::-webkit-inner-spin-button {
     -webkit-appearance: none;
+  }
+
+  :focus {
+    border-top: 1px solid #01a7fd50;
+    border-bottom: 1px solid #01a7fd50;
   }
 `;
 
@@ -98,5 +111,10 @@ const ButtonDel = styled.button`
   line-height: 24px;
   text-align: end;
   color: #01a7fd;
+  cursor: pointer;
   padding: 0;
+
+  :hover {
+    text-shadow: 0 2px 5px #01a7fd;
+  }
 `;

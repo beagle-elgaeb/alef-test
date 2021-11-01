@@ -1,12 +1,13 @@
 import { Route } from "react-router-dom";
-import styled from "styled-components/macro";
-import "../App.css";
+import styled from "@emotion/styled";
 import Footer from "./Footer";
 import Form from "./Form";
 import Header from "./Header";
 import Preview from "./Preview";
 
 function App() {
+
+
   return (
     <Container>
       <Header />
