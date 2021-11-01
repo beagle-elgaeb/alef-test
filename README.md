@@ -1,8 +1,7 @@
 # Тестовое задание от Alef Development
 
 [Вакансия](https://hh.ru/vacancy/49040389 "React-программист")  
-
-<!-- _[Ссылка на приложение](Ссылка "Приложение")_ -->
+_[Ссылка на приложение](https://beagle-elgaeb.github.io/test-alef/ "Приложение")_  
 
 <p>
   <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript"><img src="readme/icon-js.svg" alt="JS"></a>
@@ -39,7 +38,7 @@ _[Макет](https://www.figma.com/file/34RHaNzxPnoTPCtpIrqMYU/React-Alef?node-
 
 - проработан UX;
 - используется css-in-js библиотека [styled-components](https://styled-components.com/ "Документация").
-<!-- - [страница размещена на GitHub Pages](ссылка "Выполненое тестовое задание"). -->
+- [страница размещена на GitHub Pages](https://beagle-elgaeb.github.io/test-alef/ "Выполненое тестовое задание").  
 
 ## Возможные улучшения
 
