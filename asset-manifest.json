@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/test-alef/static/css/main.aeb57396.chunk.css",
-    "main.js": "/test-alef/static/js/main.f31eaef3.chunk.js",
-    "main.js.map": "/test-alef/static/js/main.f31eaef3.chunk.js.map",
-    "runtime-main.js": "/test-alef/static/js/runtime-main.773578eb.js",
-    "runtime-main.js.map": "/test-alef/static/js/runtime-main.773578eb.js.map",
+    "main.css": "/test-alef/static/css/main.07c5253c.chunk.css",
+    "main.js": "/test-alef/static/js/main.5c1b8ff4.chunk.js",
+    "main.js.map": "/test-alef/static/js/main.5c1b8ff4.chunk.js.map",
+    "runtime-main.js": "/test-alef/static/js/runtime-main.ea6417f1.js",
+    "runtime-main.js.map": "/test-alef/static/js/runtime-main.ea6417f1.js.map",
     "static/css/2.00eced3b.chunk.css": "/test-alef/static/css/2.00eced3b.chunk.css",
-    "static/js/2.e7b763b8.chunk.js": "/test-alef/static/js/2.e7b763b8.chunk.js",
-    "static/js/2.e7b763b8.chunk.js.map": "/test-alef/static/js/2.e7b763b8.chunk.js.map",
-    "static/js/3.27c7b138.chunk.js": "/test-alef/static/js/3.27c7b138.chunk.js",
-    "static/js/3.27c7b138.chunk.js.map": "/test-alef/static/js/3.27c7b138.chunk.js.map",
+    "static/js/2.5113276e.chunk.js": "/test-alef/static/js/2.5113276e.chunk.js",
+    "static/js/2.5113276e.chunk.js.map": "/test-alef/static/js/2.5113276e.chunk.js.map",
+    "static/js/3.d8d6c6dc.chunk.js": "/test-alef/static/js/3.d8d6c6dc.chunk.js",
+    "static/js/3.d8d6c6dc.chunk.js.map": "/test-alef/static/js/3.d8d6c6dc.chunk.js.map",
     "index.html": "/test-alef/index.html",
     "static/css/2.00eced3b.chunk.css.map": "/test-alef/static/css/2.00eced3b.chunk.css.map",
-    "static/css/main.aeb57396.chunk.css.map": "/test-alef/static/css/main.aeb57396.chunk.css.map",
-    "static/js/2.e7b763b8.chunk.js.LICENSE.txt": "/test-alef/static/js/2.e7b763b8.chunk.js.LICENSE.txt",
+    "static/css/main.07c5253c.chunk.css.map": "/test-alef/static/css/main.07c5253c.chunk.css.map",
+    "static/js/2.5113276e.chunk.js.LICENSE.txt": "/test-alef/static/js/2.5113276e.chunk.js.LICENSE.txt",
     "static/media/roboto-fontface.css": "/test-alef/static/media/Roboto-ThinItalic.a8cef84f.woff2",
-    "static/media/logo.63ebe298.svg": "/test-alef/static/media/logo.63ebe298.svg",
+    "static/media/logo.b11f7a1c.svg": "/test-alef/static/media/logo.b11f7a1c.svg",
     "static/media/index.css": "/test-alef/static/media/montserrat-vietnamese-400-normal.968b706e.woff2",
-    "static/media/plus.0f812a6b.svg": "/test-alef/static/media/plus.0f812a6b.svg"
+    "static/media/plus.e25d0419.svg": "/test-alef/static/media/plus.e25d0419.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.773578eb.js",
+    "static/js/runtime-main.ea6417f1.js",
     "static/css/2.00eced3b.chunk.css",
-    "static/js/2.e7b763b8.chunk.js",
-    "static/css/main.aeb57396.chunk.css",
-    "static/js/main.f31eaef3.chunk.js"
+    "static/js/2.5113276e.chunk.js",
+    "static/css/main.07c5253c.chunk.css",
+    "static/js/main.5c1b8ff4.chunk.js"
   ]
 }
