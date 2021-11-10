@@ -6,6 +6,8 @@ _[Ссылка на приложение](https://beagle-elgaeb.github.io/test-a
 <p>
   <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript"><img src="readme/icon-js.svg" alt="JS"></a>
     <img src="readme/icon-whitespace-5px.svg"/>
+  <a href="https://www.typescriptlang.org/"><img src="readme/icon-ts.svg" alt="TS"></a>
+    <img src="readme/icon-whitespace-5px.svg"/>
   <a href="https://ru.reactjs.org/"><img src="readme/icon-react.svg" alt="React"></a>
     <img src="readme/icon-whitespace-5px.svg"/>
   <a href="https://redux.js.org/"><img src="readme/icon-redux.svg" alt="Redux"></a>
@@ -14,7 +16,7 @@ _[Ссылка на приложение](https://beagle-elgaeb.github.io/test-a
     <img src="readme/icon-whitespace-5px.svg"/>
   <a href="https://webpack.js.org/"><img src="readme/icon-webpack.svg" alt="WebPack"></a>
     <img src="readme/icon-whitespace-5px.svg"/>
-  <!-- <a href="https://styled-components.com/"><img src="readme/icon-styled-components.svg" alt="Styled-components"></a> -->
+  <a href="https://emotion.sh/docs/introduction"><img src="readme/icon-emotion.svg" alt="Emotion"></a>
 </p>
 
 ## Задание
